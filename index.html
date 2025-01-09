@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/styles.css/global.css">
     <link rel="stylesheet" href="/styles.css/header.css">
     <link rel="stylesheet" href="/styles.css/booking-section.css">
+    <link rel="stylesheet" href="/styles.css/calendar.css">
     <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
     <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&display=swap" rel="stylesheet">
     <title>Testes</title>
@@ -30,6 +31,35 @@
                             <input type="date" name="date" id="date">
                             <i class="ph-bold ph-caret-down"></i>
                         </label>
+                    </div>
+                    
+                    <!-- Calendar Object -->
+                    <div class="calendar">
+                        <!-- Calendar Header -->
+                        <div class="calendar-header">
+                            <button id="prev-btn">
+                                <i class="ph-bold ph-caret-left"></i>
+                            </button>
+                            <div id="month-year"></div>
+                            <button id="next-btn">
+                                <i class="ph-bold ph-caret-right"></i>
+                            </button>
+                        </div>
+                
+                        <!-- Days of the month-->
+                        <div class="days">
+                            <div class="day">Mon</div>
+                            <div class="day">Tue</div>
+                            <div class="day">Wed</div>
+                            <div class="day">Thu</div>
+                            <div class="day">Fri</div>
+                            <div class="day">Sat</div>
+                            <div class="day">Sun</div>
+                        </div>
+                        <!--Dates-->
+                        <div class="dates" id="dates">
+                
+                        </div>
                     </div>
                 </fieldset>
         </main>
