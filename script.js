@@ -3,6 +3,7 @@ const dateText = document.querySelector("#date-text")
 const inputDate = document.querySelector("#date")
 
 // Calendar Elements
+const calendar = document.querySelector(".calendar")
 const monthYearDiv = document.querySelector("#month-year")
 const datesDiv = document.querySelector("#dates")
 const prevButton = document.querySelector("#prev-btn")
@@ -13,8 +14,7 @@ const dateChosen = inputDate.value
 changeDateText(new Date())
 
 dateLabel.onclick = (event) => {
-    inputDate.click()
-    // inputDate.showPicker()
+    calendar.classList.remove("hidden")
 }
 
 inputDate.onchange = (event) => {
@@ -34,6 +34,8 @@ function changeDateText(newDate) {
     dateText.textContent = formatDate(newDate)
 }
 
+
+//calendar script
 
 let currentDate = new Date()
 
