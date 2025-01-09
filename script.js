@@ -15,7 +15,21 @@ changeDateText(new Date())
 
 dateLabel.onclick = (event) => {
     calendar.classList.toggle("hidden")
-    console.log(event.target)
+}
+
+calendar.onclick = (event) => {
+    const activeDate = document.querySelector(".active")
+    console.log(event.target.innerText)
+    try{
+        
+        changeDateText(new Date(currentDate.getFullYear(), currentDate.getMonth(),event.target.innerText))
+        if (event.target.classList.contains("date")){
+            event.target.classList.add("active")
+            activeDate.classList.remove("active")
+        }
+    }catch(error){
+        console.log("")
+    }
 }
 
 inputDate.onclick = (event) =>{
@@ -72,9 +86,7 @@ const updateCalendar = () => {
     //Set the current date with active class
     for (let i = 1; i < totalDays; i++) {
         const date = new Date(currentYear, currentMonth, i)
-        const activeClass =
-            date.toDateString() === new Date().toDateString() ? "active" : ""
-
+        const activeClass = date.toDateString() === new Date().toDateString() ? "active" : ""
         datesHTML += `<div class="date ${activeClass}">${i}</div>`
     }
 
