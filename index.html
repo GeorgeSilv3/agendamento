@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css/style.css">
+    <link rel="stylesheet" href="/styles.css/global.css">
+    <link rel="stylesheet" href="/styles.css/header.css">
+    <link rel="stylesheet" href="/styles.css/booking-section.css">
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&display=swap" rel="stylesheet">
+    <title>Testes</title>
+</head>
+<body>
+    <div id="page">
+        <main>
+            <div class="header">
+                <h2>Agende um atendimento</h2>
+                <p>Selecione data, horário e informe seu nome e telefone para criar o agendamento</p>
+            </div>
+            <!-- Date -->
+                <fieldset class="booking-wrapper">
+                    <legend>Data</legend>
+                    <div class="date-wrapper">
+                        <label for="date"><i class="ph-bold ph-calendar-blank"></i>
+                            <span id="date-text"></span>
+                            <!-- Set min and max properties in JS to determinate the date limit -->
+                            <input type="date" name="date" id="date">
+                            <i class="ph-bold ph-caret-down"></i>
+                        </label>
+                    </div>
+                </fieldset>
+        </main>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+.header{
+    /* border: 1px solid blue; */
+}
+
+.header h2{
+    font: var(--title-lg);
+    color: var(--gray-100);
+    margin-bottom: 0.25rem;
+}
+
+.header p{
+    font: var(--text-sm);
+    color: var(--gray-300);
+}
