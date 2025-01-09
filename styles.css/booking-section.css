@@ -1,5 +1,6 @@
 .booking-wrapper{
-    border: none
+    border: none;
+    position: relative;
 }
 
 .booking-wrapper legend{
@@ -9,7 +10,10 @@
 
 .booking-wrapper input{
     padding: .75rem;
-    display: none;
+    position: absolute;
+    left: 4rem;
+    opacity: 0;
+    /* display: none; */
 }
 
 .date-wrapper{
