@@ -89,3 +89,7 @@
 .date.inactive{
     color: var(--gray-400);
 }
+
+.hidden{
+    display: none;
+}
