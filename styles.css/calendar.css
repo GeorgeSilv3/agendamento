@@ -31,11 +31,12 @@
     justify-content: center;
     border: none;
     border-radius: 50%;
-    background: #ffff;
+    background: var(--yellow);
+    color: var(--gray-100);
     cursor: pointer;
     width: 40px;
     height: 40px;
-    box-shadow: 0 0 4px rgba(0,0,0,0.2);
+    box-shadow: 0 0 4px rgba(0,0,0, 0.2);
 }
 
 .days{
@@ -46,7 +47,7 @@
 .day{
     text-align: center;
     padding: 5px;
-    color: #999FA6;
+    color: var(--gray-200);
     font-weight: 500;
 }
 
@@ -54,6 +55,7 @@
     text-transform: capitalize;
     font-weight: 600;
     width: 150px;
+    color: var(--gray-200)
 }
 
 .dates{

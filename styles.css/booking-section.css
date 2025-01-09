@@ -16,10 +16,6 @@
     /* display: none; */
 }
 
-.date-wrapper{
-
-    
-}
 
 .date-wrapper label{
     width: 100%;
@@ -30,6 +26,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
 }
 
 .date-wrapper .ph-calendar-blank{
