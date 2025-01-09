@@ -1,4 +1,4 @@
-const dateLabel = document.querySelector(".date-wrapper label")
+const dateLabel = document.querySelector(".date-wrapper > label")
 const dateText = document.querySelector("#date-text")
 const inputDate = document.querySelector("#date")
 
@@ -14,13 +14,18 @@ const dateChosen = inputDate.value
 changeDateText(new Date())
 
 dateLabel.onclick = (event) => {
-    calendar.classList.remove("hidden")
+    calendar.classList.toggle("hidden")
+    console.log(event.target)
 }
 
-inputDate.onchange = (event) => {
-    const dateChosen = new Date(event.target.value)
-    changeDateText(dateChosen)
+inputDate.onclick = (event) =>{
+    event.stopPropagation()
 }
+
+// inputDate.onchange = (event) => {
+//     const dateChosen = new Date(event.target.value)
+//     changeDateText(dateChosen)
+// }
 
 function formatDate(date) {
     return date.toLocaleString("pt-BR", {
@@ -93,5 +98,9 @@ nextButton.addEventListener("click", (event) => {
     currentDate.setMonth(currentDate.getMonth() + 1)
     updateCalendar()
 })
+
+// calendar.onclick = (event) => {
+//     console.log(event.target.classList.)
+// }
 
 updateCalendar()

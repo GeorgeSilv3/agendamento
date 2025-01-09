@@ -12,8 +12,7 @@
     padding: .75rem;
     position: absolute;
     left: 4rem;
-    opacity: 0;
-    /* display: none; */
+    display: none;
 }
 
 
