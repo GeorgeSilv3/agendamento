@@ -15,7 +15,7 @@
     border: none;
     width: 100%;
     color: var(--gray-200);
-    font: var(--text-md)
+    font: var(--text-md);
 }
 
 .client:has(input:focus){

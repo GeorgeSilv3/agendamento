@@ -40,3 +40,15 @@ form{
     grid-template-columns: 1fr;
     gap: 1rem;
 }
+
+.invalid-alert{
+    margin-top: .5rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.invalid-alert i, .invalid-alert span{
+    color: #dc2626;
+    font-size: .8rem;
+}

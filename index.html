@@ -262,14 +262,19 @@
                     <!-- Contato -->
                     <fieldset>
                         <legend>Telefone</legend>
-                        <div class="client">
+                        <div class="client" id="phone-wrapper">
                             <i class="ph-bold ph-phone"></i>
                             <input
                                 type="text"
                                 name="phone-input"
-                                placeholder="Digite seu telefone"
-                                id="phone-input" required
+                                placeholder="(DDD) 999999999"
+                                id="phone-input"
+                                required
                             />
+                        </div>
+                        <div class="invalid-alert hidden">
+                            <i class="ph ph-warning-circle"></i>
+                            <span>Número inválido</span>
                         </div>
                     </fieldset>
                     <button type="submit">AGENDAR</button>

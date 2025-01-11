@@ -3,9 +3,11 @@ const dateLabel = document.querySelector(".date-wrapper > label")
 const dateText = document.querySelector("#date-text")
 const inputDate = document.querySelector("#date")
 const form = document.querySelector("form")
-const submitBtn = document.querySelector("button[type='submit']")
-
-let dateValue;
+const clientName = document.querySelector("#name-input")
+const clientPhone = document.querySelector("#phone-input")
+const alertMessage = document.querySelector(".invalid-alert")
+const submitBtn = document.querySelector("input[type='submit']")
+const phoneDiv = document.querySelector("#phone-wrapper")
 
 // Calendar Elements
 const calendar = document.querySelector(".calendar")
@@ -14,8 +16,7 @@ const datesDiv = document.querySelector("#dates")
 const prevButton = document.querySelector("#prev-btn")
 const nextButton = document.querySelector("#next-btn")
 
-const dateChosen = inputDate.value
-
+let dateSelected = formatDate(new Date());
 
 changeDateText(new Date())
 
@@ -28,7 +29,7 @@ page.onclick = (event) => {
     if (!calendar.classList.contains("hidden")){
         calendar.classList.add("hidden")
     }
-} 
+}
 
 calendar.onclick = (event) => {
     event.stopPropagation()
@@ -39,13 +40,12 @@ calendar.onclick = (event) => {
         if (event.target.classList.contains("date")){
             if (!event.target.classList.contains("inactive")){
 
-                let dateSelected = new Date(new Date(currentDate.getFullYear(), currentDate.getMonth(),event.target.innerText))
+                dateSelected = new Date(new Date(currentDate.getFullYear(), currentDate.getMonth(),event.target.innerText))
 
                 changeDateText(dateSelected)
                 event.target.classList.add("active")
                 activeDate.classList.remove("active")
                 dateSelected = formatDate(dateSelected)
-                console.log(dateSelected)
             }
             
         }
@@ -58,16 +58,24 @@ inputDate.onclick = (event) =>{
     event.stopPropagation()
 }
 
-function formatDate(date) {
-    return date.toLocaleString("pt-BR", {
-        day: "numeric",
-        month: "numeric",
-        year: "numeric",
-    })
-}
+clientName.onkeydown = (event) => {onlyDigitsValidation(event)}
 
-function changeDateText(newDate) {
-    dateText.textContent = formatDate(newDate)
+clientPhone.onkeydown = (event) => {onlyNumbersValidation(event)}
+
+
+// Form Script
+form.onsubmit = (event) => {
+    event.preventDefault()
+    const schedule = document.querySelector("input[name='schedule']:checked")
+    if (phoneValidation(clientPhone.value)){
+        const client = {
+            date: dateSelected,
+            schedule: schedule.id,
+            name: clientName.value,
+            phone: clientPhone.value
+        }
+        console.log(client)
+    }
 }
 
 
@@ -133,10 +141,50 @@ nextButton.addEventListener("click", (event) => {
     updateCalendar()
 })
 
-// Form Script
-form.onsubmit = (event) => {
-    event.preventDefault()
-    console.log(inputDate.value)
+
+
+function formatDate(date) {
+    return date.toLocaleString("pt-BR", {
+        day: "numeric",
+        month: "numeric",
+        year: "numeric",
+    })
+}
+
+function changeDateText(newDate) {
+    dateText.textContent = formatDate(newDate)
+}
+
+function onlyDigitsValidation(event){
+
+    const char = event.key
+    if (/[a-zA-Z\s\b]/.test(char)){
+        return event.key
+    }
+    return event.preventDefault()
+}
+
+function onlyNumbersValidation(event){
+    const number = event.key
+    console.log(number)
+    if (/[0-9]/.test(number) | number == "Backspace"){
+        return event.key
+    }
+    return event.preventDefault()
+}
+
+function phoneValidation(phoneNumber){
+    const phoneRegex = /^0?(\d{2})9?(\d{8})$/
+    if (!phoneRegex.test(phoneNumber)){
+        alertMessage.classList.remove("hidden")
+        phoneDiv.style.borderColor = "#dc2626"
+        return false
+    } else{
+        alertMessage.classList.add("hidden")
+        phoneDiv.style.borderColor = "var(--gray-500)"
+        return true
+        
+    }
 }
 
 updateCalendar()
