@@ -66,23 +66,32 @@ clientPhone.onkeydown = (event) => {onlyNumbersValidation(event)}
 
 // Form Script
 form.onsubmit = (event) => {
+    let client = {}
     event.preventDefault()
     const schedule = document.querySelector("input[name='schedule']:checked")
-    let client = {}
     if (phoneValidation(clientPhone.value)){
-        client = {
-            date: dateSelected,
-            schedule: schedule.id,
-            name: clientName.value,
-            phone: clientPhone.value
+        try{
+
+            client = {
+                date: dateSelected,
+                schedule: schedule.id,
+                name: clientName.value,
+                phone: clientPhone.value
+            }
+            console.log(client)
+            save(client)
+        }catch(error){
+            console.log("error")
         }
-        console.log(client)
     }
-    //Comunicanting to Google API
     
-    google.script.run.withSuccessHandler((retorno)=>{"console.log(Client Saved)"}).save(client)
 }
 
+function save(client){
+    console.log("entrou!")
+    //Comunicanting to Google API
+    google.script.run.withSuccessHandler((retorno)=>{console.log("Client Saved")}).withFailureHandler((retorno) => {console.log("Deu erro")}).save(client)
+}
 
 //calendar script
 
@@ -171,7 +180,6 @@ function onlyDigitsValidation(event){
 
 function onlyNumbersValidation(event){
     const number = event.key
-    console.log(number)
     if (/[0-9]/.test(number) | number == "Backspace"){
         return event.key
     }
