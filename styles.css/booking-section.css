@@ -1,9 +1,9 @@
-.booking-wrapper{
+fieldset{
     border: none;
     position: relative;
 }
 
-.booking-wrapper legend{
+fieldset legend{
     font: var(--title-md);
     color: var(--gray-200);
 }
