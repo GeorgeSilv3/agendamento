@@ -68,8 +68,9 @@ clientPhone.onkeydown = (event) => {onlyNumbersValidation(event)}
 form.onsubmit = (event) => {
     event.preventDefault()
     const schedule = document.querySelector("input[name='schedule']:checked")
+    let client = {}
     if (phoneValidation(clientPhone.value)){
-        const client = {
+        client = {
             date: dateSelected,
             schedule: schedule.id,
             name: clientName.value,
@@ -77,6 +78,9 @@ form.onsubmit = (event) => {
         }
         console.log(client)
     }
+    //Comunicanting to Google API
+    
+    google.script.run.withSuccessHandler((retorno)=>{"console.log(Client Saved)"}).save(client)
 }
 
 
