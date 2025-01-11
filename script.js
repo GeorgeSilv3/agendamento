@@ -1,8 +1,10 @@
+const page = document.querySelector("#page")
 const dateLabel = document.querySelector(".date-wrapper > label")
 const dateText = document.querySelector("#date-text")
 const inputDate = document.querySelector("#date")
 const form = document.querySelector("form")
 const submitBtn = document.querySelector("button[type='submit']")
+
 let dateValue;
 
 // Calendar Elements
@@ -18,11 +20,18 @@ const dateChosen = inputDate.value
 changeDateText(new Date())
 
 dateLabel.onclick = (event) => {
+    event.stopPropagation()
     calendar.classList.toggle("hidden")
 }
 
-calendar.onclick = (event) => {
+page.onclick = (event) => {
+    if (!calendar.classList.contains("hidden")){
+        calendar.classList.add("hidden")
+    }
+} 
 
+calendar.onclick = (event) => {
+    event.stopPropagation()
     //Need to refactor this code
     const activeDate = document.querySelector(".active")
     try{ 
