@@ -1,5 +1,39 @@
-
-
 .schedules span{
-    
+    display: inline-block;
+    margin-block: .5rem;
 }
+
+.all-schedules{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: .5rem;
+}
+
+.schedules-input input{
+    display: none;
+}
+
+.schedules-input label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 100%;
+    background-color: var(--gray-600);
+    color: var(--gray-200);
+    border-radius: .5rem;
+    transition: all .2s;
+    cursor: pointer;
+}
+
+.schedules-input label:has(input:checked){
+    border-color: var(--yellow);
+    color: var(--yellow);
+}
+
+.schedules-input .unavaliable{
+    color: var(--gray-500);
+    background-color: var(--gay-800);
+    cursor: auto;
+}
+
