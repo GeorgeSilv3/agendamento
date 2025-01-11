@@ -1,13 +1,13 @@
 <style>
 body{
-    height: 100vh;
+    height: 100%;
 }
 #page{
     height: inherit;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding-block: 5rem;
+    /* align-items: center; */
+    padding-block: 1rem;
     background-color: rgb(24, 23, 23);
     z-index: -1;
     
@@ -22,6 +22,7 @@ main{
     height: inherit;
     padding: 5rem;
     background-color: var(--gray-700);
+    border-radius: .5rem;
 }
 
 button[type="submit"]{
@@ -54,5 +55,10 @@ form{
     font-size: .8rem;
 }
 
+@media screen and (max-width: 54rem){
+    main{
+        padding: 1rem;
+    }
+}
 
 </style>

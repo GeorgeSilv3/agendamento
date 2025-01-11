@@ -1,94 +1,108 @@
 <style>
-.calendar{
-    margin-top: 1rem;
-    width: inherit;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    background-color: var(--gray-700);
-    border: 1px solid var(--gray-500);
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.24);
-}
+    .calendar {
+        margin-top: 1rem;
+        /* position: absolute; */
+        z-index: 2;
+        width: 100%;
+        left: 2.5rem;
+        width: inherit;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 0.62rem;
+        background-color: var(--gray-700);
+        border: 1px solid var(--gray-500);
+        border-radius: 0.62rem;
+        box-shadow: 0px 0px 0.62rem rgba(0, 0, 0, 0.24);
+    }
 
-.calendar-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-}
+    .calendar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.62rem;
+    }
 
-.ph-caret-left, .ph-caret-right{
-    color: var(--grey-900);
-}
+    .ph-caret-left,
+    .ph-caret-right {
+        color: var(--grey-900);
+    }
 
-.calendar-header button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    border-radius: 50%;
-    background: var(--yellow);
-    color: var(--gray-100);
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    box-shadow: 0 0 4px rgba(0,0,0, 0.2);
-}
+    .calendar-header button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 50%;
+        background: var(--yellow);
+        color: var(--gray-100);
+        cursor: pointer;
+        width: 2.5rem;
+        height: 2.5rem;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    }
 
-.days{
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-}
+    .days {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+    }
 
-.day{
-    text-align: center;
-    padding: 5px;
-    color: var(--gray-200);
-    font-weight: 500;
-}
+    .day {
+        text-align: center;
+        padding: .31rem;
+        color: var(--gray-200);
+        font-weight: 500;
+    }
 
-#month-year{
-    text-transform: capitalize;
-    font-weight: 600;
-    width: 150px;
-    color: var(--gray-200)
-}
+    #month-year {
+        text-transform: capitalize;
+        font-weight: 600;
+        width: 9.37rem;
+        color: var(--gray-200);
+        text-align: center;
+    }
 
-.dates{
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    justify-content: center;
-    gap: 5px;
-    align-items: center;
-    text-align: center;
-}
+    .dates {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        justify-content: center;
+        gap: .31rem;
+        align-items: center;
+        text-align: center;
+    }
 
-.date{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    cursor: pointer;
-    font-weight: 600;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    transition: all 200ms;
-    color: var(--gray-200);
-}
+    .date {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.62rem;
+        cursor: pointer;
+        font-weight: 600;
+        border-radius: 50%;
+        width: 2.5rem;
+        height: 2.5rem;
+        transition: all 200ms;
+        color: var(--gray-200);
+    }
 
-.date:not(.inactive):hover, .date.active{
-    background: #ff5869;
-    color: #FFFF;
-}
+    .date:not(.inactive):hover,
+    .date.active {
+        background: #ff5869;
+        color: #ffff;
+    }
 
-.date.inactive{
-    color: var(--gray-400);
-}
+    .date.inactive {
+        color: var(--gray-400);
+    }
 
-.hidden{
-    display: none;
-}
+    .hidden {
+        display: none;
+    }
+
+    @media screen and (max-width: 54rem) {
+        .calendar {
+            right: 0.5rem;
+            scale: 0.9;
+        }
+    }
 </style>
