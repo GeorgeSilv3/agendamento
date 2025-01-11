@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/styles.css/booking-section.css">
     <link rel="stylesheet" href="/styles.css/calendar.css">
     <link rel="stylesheet" href="/styles.css/schedules.css">
+    <link rel="stylesheet" href="/styles.css/client-name.css">
     <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
     <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&display=swap" rel="stylesheet">
     <title>Testes</title>
@@ -77,31 +78,93 @@
                             <div class="schedules-input">
                                 <label for="9pm" aria-label="09:00" class="shedule-selector">
                                     <!-- <b>09:00</b> -->
-                                    <input type="radio" name="9pm" id="9pm">
+                                    <input type="radio" name="schedule" id="9pm">
+                                    <p>09:00</p>
                                 </label>
                             </div>
                             <!-- 10pm -->
                             <div class="schedules-input">
-                                <label for="10pm" aria-label="10:00" class="shedule-selector">
+                                <label for="10pm" aria-label="10:00" class="shedule-selector unavaliable">
                                     <!-- <b>10:00</b> -->
-                                    <input type="radio" name="10pm" id="10pm">
+                                    <input type="radio" name="schedule" id="10pm" disabled>
+                                    <p>10:00</p>
                                 </label>
                             </div>
                             <!-- 11pm -->
                             <div class="schedules-input">
                                 <label for="11pm" aria-label="11:00" class="shedule-selector">
                                     <!-- <b>11:00</b> -->
-                                    <input type="radio" name="11pm" id="11pm">
+                                    <input type="radio" name="schedule" id="11pm">
+                                    <p>11:00</p>
                                 </label>
                             </div>
                             <!-- 12pm -->
                             <div class="schedules-input">
                                 <label for="12pm" aria-label="12:00" class="shedule-selector">
                                     <!-- <b>12:00</b> -->
-                                    <input type="radio" name="12pm" id="12pm">
+                                    <input type="radio" name="schedule" id="12pm">
+                                    <p>12:00</p>
                                 </label>
                             </div>
                         </div>
+
+                        <span>Tarde</span>
+                        <!-- 13pm -->
+                        <div class="all-schedules">
+
+                            <div class="schedules-input">
+                                <label for="13pm" aria-label="13:00" class="shedule-selector">
+                                    <input type="radio" name="schedule" id="13pm">
+                                    <p>13:00</p>
+                                </label>
+                            </div>
+                            <!-- 14pm -->
+                            <div class="schedules-input">
+                                <label for="14pm" aria-label="14:00" class="shedule-selector">
+                                    <input type="radio" name="schedule" id="14pm">
+                                    <p>14:00</p>
+                                </label>
+                            </div>
+                            <!-- 15pm -->
+                            <div class="schedules-input">
+                                <label for="15pm" aria-label="15:00" class="shedule-selector">
+                                    <input type="radio" name="schedule" id="15pm">
+                                    <p>15:00</p>
+                                </label>
+                            </div>
+                            <!-- 16pm -->
+                            <div class="schedules-input">
+                                <label for="16pm" aria-label="16:00" class="shedule-selector unavaliable">
+                                    <!-- <b>16:00</b> -->
+                                    <input type="radio" name="schedule" id="16pm" disabled>
+                                    <p>16:00</p>
+                                </label>
+                            </div>
+                            <!-- 17pm -->
+                            <div class="schedules-input">
+                                <label for="17pm" aria-label="17:00" class="shedule-selector">
+                                    <input type="radio" name="schedule" id="17pm">
+                                    <p>17:00</p>
+                                </label>
+                            </div>
+                            <!-- 18pm -->
+                            <div class="schedules-input">
+                                <label for="18pm" aria-label="18:00" class="shedule-selector">
+                                    <!-- <b>18:00</b> -->
+                                    <input type="radio" name="schedule" id="18pm">
+                                    <p>18:00</p>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- Cliente -->
+                <fieldset>
+                    <legend>Nome</legend>
+                    <div class="client-name">
+                        <i class="ph-bold ph-user-rectangle"></i>
+                        <input type="text" name="name-input" id="name-input">
                     </div>
                 </fieldset>
         </main>
