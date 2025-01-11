@@ -18,6 +18,10 @@
     padding: 10px;
 }
 
+.ph-caret-left, .ph-caret-right{
+    color: var(--grey-900);
+}
+
 .calendar-header button{
     display: flex;
     align-items: center;
