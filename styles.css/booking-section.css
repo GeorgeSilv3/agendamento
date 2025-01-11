@@ -6,7 +6,6 @@ fieldset{
 fieldset legend{
     font: var(--title-md);
     color: var(--gray-200);
-    margin-block: .5rem;
 }
 
 .booking-wrapper input{
